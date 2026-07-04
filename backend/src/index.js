@@ -32,6 +32,7 @@ const PORT = process.env.PORT || 3003;
 
 app.use(helmet());
 const allowedOrigins = env.CORS_ORIGIN.split(',').map(o => o.trim());
+console.log('[DEBUG] Allowed CORS origins:', JSON.stringify(allowedOrigins));
 
 app.use(cors({
   origin: allowedOrigins,
