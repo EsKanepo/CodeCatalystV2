@@ -1,0 +1,230 @@
+/* Header section (reuse pattern from courses-detail header) */
+.page-header {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand-light));
+  color: white;
+  padding: clamp(3rem, 5vw, 5rem) 20px;
+  text-align: center;
+  box-shadow: 0 14px 36px rgba(8, 42, 89, 0.14);
+  border-radius: 24px;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  color: #dbe8ff;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resource-section {
+  background: var(--bg-light);
+}
+
+/* Main content cards */
+.content-card {
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: 0 14px 36px rgba(8, 42, 89, 0.08);
+  padding: 24px;
+  height: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.content-card:hover {
+  box-shadow: 0 18px 42px rgba(8, 42, 89, 0.12);
+  transform: translateY(-3px);
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(58, 160, 255, 0.25);
+}
+
+.card-title i {
+  color: var(--brand-light);
+}
+
+/* Buku referensi */
+.resource-item {
+  background: #f8fbff;
+  border-radius: 20px;
+  padding: 20px 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.resource-item:hover {
+  background: #eef4ff;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(8, 42, 89, 0.1);
+}
+
+.resource-icon {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+}
+
+.resource-item h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 0;
+}
+
+.resource-item .btn-outline-primary {
+  margin-top: 6px;
+}
+
+/* List groups (Website Tutorial & Channel YouTube) */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item strong {
+  color: var(--brand-dark);
+}
+
+.list-group-item p {
+  margin-bottom: 8px;
+}
+
+/* Tools & Software */
+.tool-card {
+  background: #f8fbff;
+  border-radius: 20px;
+  padding: 20px 18px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.tool-card:hover {
+  background: #eef4ff;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(8, 42, 89, 0.1);
+}
+
+.tool-icon {
+  font-size: 2.2rem;
+  color: var(--brand-light);
+  margin-bottom: 8px;
+}
+
+.tool-card h6 {
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+/* Dokumentasi Framework links */
+.doc-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #f8fbff;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--brand-dark);
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.doc-link i:first-child {
+  font-size: 1.5rem;
+  color: var(--brand-light);
+}
+
+.doc-link i:last-child {
+  font-size: 0.9rem;
+}
+
+.doc-link span {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.doc-link:hover {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand-light));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(8, 42, 89, 0.2);
+}
+
+.doc-link:hover i:first-child {
+  color: white;
+}
+
+/* CTA box */
+.cta-box {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 32px 24px;
+  margin-top: 10px;
+  box-shadow: 0 18px 44px rgba(8, 42, 89, 0.12);
+}
+
+.cta-box h4 {
+  font-weight: 800;
+  color: var(--brand-dark);
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 40px 16px;
+  }
+
+  .page-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .content-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 30px 15px;
+  }
+
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .content-card {
+    padding: 16px;
+  }
+}
+

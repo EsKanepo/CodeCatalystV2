@@ -1,0 +1,230 @@
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 4rem;
+  color: var(--brand-light);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.testimonial-info {
+  flex: 1;
+}
+
+.testimonial-info h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 4px;
+}
+
+.testimonial-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.testimonial-rating {
+  color: #fbbf24;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.testimonial-content {
+  margin-bottom: 24px;
+}
+
+.testimonial-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  margin: 0;
+  font-style: italic;
+}
+
+.testimonial-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.course-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.location-badge {
+  background: #f3e8ff;
+  color: #7c3aed;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .testimonial-card {
+    padding: 24px;
+  }
+
+  .testimonial-header {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1.125rem;
+  }
+
+  .testimonial-info h4 {
+    font-size: 1rem;
+  }
+
+  .testimonial-info p {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-card::before {
+    font-size: 3rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  .testimonial-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+  }
+
+  .testimonial-rating {
+    align-self: center;
+  }
+
+  .testimonial-content p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .testimonial-footer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-card {
+    padding: 16px;
+  }
+
+  .testimonial-card::before {
+    font-size: 2.5rem;
+    top: 10px;
+    right: 10px;
+  }
+
+  .testimonial-header {
+    margin-bottom: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1.125rem;
+  }
+
+  .testimonial-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-info p {
+    font-size: 0.75rem;
+  }
+
+  .testimonial-content p {
+    font-size: 0.85rem;
+  }
+
+  .course-badge, .location-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}

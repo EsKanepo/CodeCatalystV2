@@ -1,0 +1,73 @@
+============================
+        DATA TIM
+============================
+
+1. Nama Tim:
+Nicolain
+
+---
+
+2. Anggota Tim:
+
+1) Nama Lengkap: Ethan Wilbert
+   NIM          : 241110939
+
+2) Nama Lengkap: Anggara Adelee
+   NIM          : 241112271
+
+3) Nama Lengkap: Devin Owen Sanusi
+   NIM          : 241111093
+
+4) Nama Lengkap: Nicholian Tjuarsa
+   NIM          : 241110066
+
+---
+
+3. Teknologi yang Digunakan:
+
+Frontend:
+
+- React 18/19 (framework UI modern)
+- React Router v6 (untuk routing client-side)
+- Axios (untuk HTTP requests ke API)
+- Material-UI (@mui/material) (library komponen UI)
+- Styled Components (untuk CSS-in-JS styling)
+- Firebase (kemungkinan untuk autentikasi atau penyimpanan)
+- Framer Motion (untuk animasi dan transisi)
+- React Slick dan Slick Carousel (untuk carousel/slider)
+- Bootstrap 
+
+Backend:
+
+- Node.js (runtime JavaScript)
+- Express.js (framework web dengan ES Modules)
+- MySQL2 (driver database untuk MySQL)
+- JWT (untuk autentikasi token)
+- bcryptjs (untuk hashing password)
+- Zod (untuk validasi input)
+- Cors, Helmet, Morgan (middleware keamanan dan logging)
+
+Template yang digunakan:
+- template umum React yang dimodifikasi secara ekstensif, tanpa kredit atau link ke sumber eksternal.
+
+
+---
+
+4. Inovasi dan Kreativitas:
+
+Website yang kami kembangkan memiliki beberapa inovasi dan keunggulan, antara lain:
+
+- Sistem CodePoints (Mata Uang Virtual): Fitur unik untuk gamifikasi pembelajaran, di mana pengguna dapat membeli kursus menggunakan poin virtual, mendapatkan bonus harian, 
+  dan menyelesaikan tantangan untuk mendapatkan reward. Ini mendorong engagement dan membuat pembelajaran lebih menarik dibandingkan LMS tradisional.
+- Gamified Learning Experience: Integrasi poin, achievements, dan progress tracking real-time dengan animasi (menggunakan Framer Motion) yang membuat proses belajar lebih 
+  interaktif dan menyenangkan.
+- Responsive Design dengan Mobile-First Approach: UI/UX yang modern dan profesional menggunakan Material-UI, dengan grid layout yang adaptif dan animasi halus, memastikan 
+  pengalaman optimal di semua perangkat (mobile, tablet, desktop).
+- Auto-Setup Scripts: Inovasi teknis dengan script otomatis untuk instalasi dan startup, termasuk mock database yang tidak memerlukan setup MySQL manual, sehingga mengurangi 
+  kompleksitas deployment.
+- Mock Database untuk Development: Pendekatan zero-configuration database yang memungkinkan pengembangan cepat tanpa dependensi eksternal.
+- Integrasi Fitur Modern: Penggunaan context API untuk state management (AuthContext, PointsContext), validasi input yang kuat, dan API endpoints yang terstruktur untuk 
+  manajemen kursus, progress, dan autentikasi.
+
+
+==============================================================================================================================================================================

@@ -1,0 +1,138 @@
+
+.contact-success-page {
+  background: #fff;
+  color: #111;
+}
+
+/* HEADER GRADIENT */
+.contact-success-page .hero {
+  background: linear-gradient(90deg, #08306b, #2b9cff);
+  color: #fff;
+  padding: 2.25rem 0;
+  text-align: center;
+}
+
+.contact-success-page .hero h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.contact-success-page .hero p {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* CARD SECTION */
+.contact-success-page .card-result {
+  max-width: 760px;
+  margin: 40px auto 3rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+}
+
+/* TEXT & ICONS */
+.contact-success-page .card-result h4 {
+  font-weight: 600;
+  color: #08306b;
+}
+
+.contact-success-page .note {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* BUTTONS (scoped) */
+.contact-success-page .btn {
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.contact-success-page .btn i {
+  margin-right: 6px;
+}
+
+.contact-success-page .btn-primary {
+  background-color: #2b9cff;
+  border: none;
+}
+
+.contact-success-page .btn-primary:hover {
+  background-color: #1c7ed6;
+}
+
+.contact-success-page .btn-outline-secondary:hover {
+  background-color: #f1f3f5;
+}
+
+/* Tablet dan Desktop kecil */
+@media (max-width: 991px) {
+  .contact-success-page .hero {
+    padding: 2rem 1rem;
+  }
+
+  .contact-success-page .card-result {
+    margin: 30px 20px 2.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .contact-success-page .hero {
+    padding: 1.8rem 1rem;
+  }
+
+  .contact-success-page .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-success-page .card-result {
+    margin: 20px 15px 2rem;
+    padding: 1.25rem;
+  }
+
+  .contact-success-page .btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .contact-success-page .hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-success-page .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-success-page .hero p {
+    font-size: 0.9rem;
+  }
+
+  .contact-success-page .card-result {
+    margin: 15px 10px 1.5rem;
+    padding: 1rem;
+  }
+
+  .contact-success-page .card-result h4 {
+    font-size: 1.1rem;
+  }
+
+  .contact-success-page .note {
+    font-size: 0.9rem;
+  }
+
+  .contact-success-page .btn {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+

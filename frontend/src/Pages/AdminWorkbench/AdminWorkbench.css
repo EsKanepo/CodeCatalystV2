@@ -1,0 +1,123 @@
+.admin-workbench {
+  min-height: 100vh;
+  background: #f4f6f9;
+}
+
+.admin-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.admin-tab {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #495057;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.admin-tab:hover {
+  background: #e9ecef;
+}
+
+.admin-tab.active {
+  background: #0d6efd;
+  color: white;
+}
+
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card .card-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.sales-bar-container {
+  background: #e9ecef;
+  border-radius: 6px;
+  height: 8px;
+  overflow: hidden;
+  min-width: 80px;
+}
+
+.sales-bar-fill {
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.progress-mini {
+  background: #e9ecef;
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.progress-mini-fill {
+  background: #198754;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.user-progress-row {
+  background: #f8f9fa;
+  border-left: 3px solid #0d6efd;
+}
+
+.admin-form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.admin-table-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.badge-role-student { background: #6c757d; }
+.badge-role-premium { background: #ffc107; color: #000; }
+.badge-role-admin { background: #dc3545; }
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+}

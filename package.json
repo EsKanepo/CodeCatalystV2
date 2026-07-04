@@ -1,0 +1,23 @@
+{
+  "name": "codecatalyst-fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack CodeCatalyst LMS",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix BackEnd\" \"npm start --prefix FrontEnd\"",
+    "start": "concurrently \"npm run start --prefix BackEnd\" \"npm start --prefix FrontEnd\"",
+    "dev:backend": "npm run dev --prefix BackEnd",
+    "dev:frontend": "npm start --prefix FrontEnd",
+    "kill-ports": "taskkill /F /IM node.exe",
+    "install-all": "npm install && npm install --prefix BackEnd && npm install --prefix FrontEnd"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
+    "react-router-hash-link": "^2.4.3"
+  }
+}

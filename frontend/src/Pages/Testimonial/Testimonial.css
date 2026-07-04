@@ -1,0 +1,275 @@
+.testimonial-page {
+  padding: 80px 20px;
+  background: transparent;
+}
+
+.testimonial-page header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.testimonial-page h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.testimonial-page p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.btn-add-testimonial {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-add-testimonial:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* FILTER */
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.filter-group span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.filter-group button {
+  margin-right: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-group button:hover {
+  border-color: #2563eb;
+}
+
+.filter-group button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* LIST VERTICAL */
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* CARD LEBAR, NYAMAN DIBACA */
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+  border: 1px solid #e7edf6;
+  position: relative;
+}
+
+/* CARD HEADER WITH DELETE BUTTON */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* PROFILE HEADER */
+.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f4f8;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.profile-info .occupation {
+  margin: 0 0 2px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.profile-info .company {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* RATING STYLE */
+.rating {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-delete:hover:not(:disabled) {
+  background-color: #ffebee;
+  transform: scale(1.15);
+}
+
+.btn-delete:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  margin: 20px 0;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.empty-state {
+  text-align: center;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #fff;
+  padding: 18px;
+  color: #64748b;
+}
+
+.empty-state.error {
+  border-color: #f44336;
+  color: #c62828;
+  background-color: #ffebee;
+}
+
+/* FOOTER INFO */
+.testimonial-card footer {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.course-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.time-badge {
+  background: #f3e8ff;
+  color: #7c3aed;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+/* BADGE */
+.badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.badge.online {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge.offline {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pagination button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: white;
+}
+
+.pagination button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .btn-add-testimonial {
+    width: 100%;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-delete {
+    align-self: flex-end;
+  }
+}

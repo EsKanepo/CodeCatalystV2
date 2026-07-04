@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: codecatalyst-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3003
+      - key: USE_MYSQL
+        value: true
+      - key: DB_HOST
+        value: '' # To be filled in Render Dashboard (Managed MySQL host)
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        value: '' # To be filled in Render Dashboard
+      - key: DB_PASSWORD
+        value: '' # To be filled in Render Dashboard
+      - key: DB_NAME
+        value: codecatalyst_lms
+      - key: JWT_SECRET
+        value: codecatalyst-production-secret-replace-me
+      - key: JWT_EXPIRES_IN
+        value: 2h
+
+  - type: web
+    name: codecatalyst-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://codecatalyst-backend.onrender.com

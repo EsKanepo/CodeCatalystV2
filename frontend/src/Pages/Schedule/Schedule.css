@@ -1,0 +1,518 @@
+/* ==========================================================================
+   SCHEDULE PAGE - TABBED & MASONRY PREMIUM UI (ANTI-SQUISH)
+   ========================================================================== */
+
+:root {
+  --schedule-bg-dark: #0f172a;
+  --schedule-bg-light: #1e293b;
+  --schedule-accent: #6366f1;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+}
+
+.schedule-wrapper {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-light) 50%, #667eea 100%);
+  min-height: 100vh;
+  padding: clamp(60px, 8vw, 100px) 0;
+  color: var(--text-light);
+}
+
+.schedule-container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.schedule-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.premium-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  margin: 0;
+  color: white;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Promo Glass Banner */
+.hero-promo {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.promo-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.promo-glass:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.promo-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+}
+
+.promo-text {
+  text-align: left;
+  flex: 1;
+}
+
+.promo-text h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.promo-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.btn-promo-action {
+  background: white;
+  color: var(--brand-dark);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-promo-action:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .promo-glass {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  .promo-text {
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   2. INTERACTIVE SCHEDULE (TABS + CONTENT)
+   ========================================================================== */
+.schedule-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Horizontal Tabs */
+.day-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.1);
+  padding: 12px;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.day-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.day-tab:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.day-tab.active {
+  background: white;
+  color: var(--text-primary);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.day-tab.active .tab-icon {
+  background: var(--tab-color);
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .day-selector {
+    border-radius: 24px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  .day-tab {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Active Panel Content */
+.active-day-content {
+  width: 100%;
+  max-width: 900px;
+}
+
+.day-panel {
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.day-panel.active-panel {
+  display: block;
+}
+
+.panel-title {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Premium Horizontal Cards */
+.premium-class-card {
+  display: flex;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.premium-class-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  background: #ffffff;
+}
+
+.card-left {
+  flex: 2;
+  padding: 32px;
+  border-left: 6px solid;
+}
+
+.time-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.class-name {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: 0 0 20px 0;
+}
+
+.class-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill-level { background: #e0e7ff; color: #4338ca; }
+.pill-room { background: #f1f5f9; color: #475569; }
+.pill-duration { background: #fef3c7; color: #d97706; }
+
+.card-divider {
+  width: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 24px 0;
+}
+
+.card-right {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.tutor-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tutor-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tutor-avatar-lg {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.tutor-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.tutor-link-btn {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tutor-link-btn:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .premium-class-card {
+    flex-direction: column;
+  }
+  .card-divider {
+    width: auto;
+    height: 1px;
+    margin: 0 32px;
+  }
+}
+
+/* ==========================================================================
+   3. BOTTOM RESOURCES (GRID)
+   ========================================================================== */
+.schedule-resources {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.resource-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 32px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.resource-card.highlight-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
+}
+
+.resource-card.highlight-card:hover {
+  background: #ffffff;
+}
+
+.rc-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.highlight-card .rc-icon {
+  background: var(--brand-dark);
+  color: white;
+}
+
+.resource-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+}
+
+.rc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rc-links a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.2s ease;
+}
+
+.rc-links a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.rc-links a i {
+  background: rgba(255,255,255,0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rc-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.rc-contact span {
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

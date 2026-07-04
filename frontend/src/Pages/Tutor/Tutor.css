@@ -1,0 +1,152 @@
+/* ==========================================================================
+   TUTOR PAGE PREMIUM UI (ANTI-SQUISH)
+   ========================================================================== */
+
+.tutor-page-wrapper {
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+/* --- Hero Section --- */
+.tutors-hero {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-light) 50%, #667eea 100%);
+  color: white;
+  padding: clamp(60px, 8vw, 100px) 0 clamp(80px, 10vw, 120px) 0;
+  text-align: center;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+.tutors-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* --- Grid Layout --- */
+.tutors-grid-section {
+  padding: 0 0 100px 0;
+  margin-top: -60px; /* Pulls cards up over the hero clip-path */
+  position: relative;
+  z-index: 10;
+}
+
+.tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* --- Premium Card UI --- */
+.premium-tutor-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-tutor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.tutor-card-bg {
+  height: 120px;
+  width: 100%;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+.premium-tutor-card:hover .tutor-card-bg {
+  opacity: 0.25;
+}
+
+.tutor-card-content {
+  padding: 0 30px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+/* --- Avatar --- */
+.tutor-avatar-wrapper {
+  margin-top: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 6px;
+  background: white;
+  border: 3px solid; /* color applied via inline style */
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.premium-tutor-card:hover .tutor-avatar-wrapper {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.tutor-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- Typography --- */
+.tutor-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.tutor-role {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px 0;
+}
+
+.tutor-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex: 1;
+}
+
+/* --- Social Links --- */
+.tutor-socials {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--brand-dark);
+  color: white;
+  transform: translateY(-3px);
+}

@@ -1,0 +1,357 @@
+.progress-tracker {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+.progress-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.progress-percentage {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  line-height: 1;
+}
+
+.progress-lessons {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.progress-bar-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-markers {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.marker {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.progress-info {
+  margin-bottom: 20px;
+}
+
+.progress-label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface-soft);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.progress-milestone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.milestone-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.milestone-icon.completed {
+  background: var(--gradient-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.progress-milestone span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.progress-encouragement {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #fbbf24;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.progress-encouragement p {
+  margin: 0;
+  color: #92400e;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.progress-congratulations {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border: 1px solid #22c55e;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-congratulations::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.congratulations-icon {
+  font-size: 3rem;
+  color: #16a34a;
+  margin-bottom: 16px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.congratulations-text h5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 8px;
+}
+
+.congratulations-text p {
+  color: #15803d;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.congratulations-text .btn {
+  background: #16a34a;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.congratulations-text .btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .progress-tracker {
+    padding: 20px;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .progress-stats {
+    align-items: flex-start;
+  }
+
+  .progress-percentage {
+    font-size: 1.5rem;
+  }
+
+  .progress-lessons {
+    font-size: 0.8rem;
+  }
+
+  .progress-details {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .progress-milestone {
+    flex: 1;
+    min-width: 60px;
+  }
+
+  .milestone-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .progress-milestone span {
+    font-size: 0.7rem;
+  }
+
+  .marker {
+    font-size: 0.65rem;
+  }
+
+  .congratulations-icon {
+    font-size: 2.5rem;
+  }
+
+  .congratulations-text h5 {
+    font-size: 1.25rem;
+  }
+
+  .congratulations-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .progress-tracker {
+    padding: 16px;
+  }
+
+  .progress-title {
+    font-size: 1.125rem;
+  }
+
+  .progress-percentage {
+    font-size: 1.25rem;
+  }
+
+  .progress-lessons {
+    font-size: 0.75rem;
+  }
+
+  .progress-bar-bg {
+    height: 10px;
+  }
+
+  .marker {
+    font-size: 0.6rem;
+  }
+
+  .progress-details {
+    padding: 12px;
+  }
+
+  .milestone-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .progress-milestone span {
+    font-size: 0.65rem;
+  }
+
+  .progress-encouragement p {
+    font-size: 0.8rem;
+  }
+
+  .congratulations {
+    padding: 20px;
+  }
+
+  .congratulations-icon {
+    font-size: 2rem;
+  }
+
+  .congratulations-text h5 {
+    font-size: 1.125rem;
+  }
+
+  .congratulations-text p {
+    font-size: 0.85rem;
+  }
+
+  .congratulations-text .btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+}
