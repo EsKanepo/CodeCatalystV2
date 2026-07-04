@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { courseData, additionalCourses, allCourses } from "./courseData";
+import { courseData, allCourses } from "./courseData";
 import CourseList from "./components/CourseList";
 import CourseVideo from "./components/CourseVideo";
 import CoursesCTA from "./components/Coursescta";
@@ -17,18 +17,6 @@ const Courses = () => {
   const [courses] = useState(courseData);
   const [isLoading] = useState(false);
   const [loadError] = useState("");
-  const [progress, setProgress] = useState({
-    1: 0, // HTML Fundamental
-    2: 0, // CSS Styling
-    3: 0, // JavaScript Dasar
-    4: 0, // Bootstrap Framework
-    5: 0, // React Development
-    6: 0, // Node.js Backend Development
-    7: 0, // Vue.js Modern Development
-    8: 0, // TypeScript Masterclass
-    9: 0, // Git & GitHub Workflow
-    10: 0, // Docker Containerization
-  });
 
   // Pagination and filter state
   const [currentPage, setCurrentPage] = useState(1);
@@ -98,7 +86,7 @@ const Courses = () => {
             <div className="col-lg-8">
               <CourseList
                 courses={paginatedCourses}
-                progress={progress}
+                progress={{}}
                 isLoggedIn={Boolean(token)}
                 isLoading={isLoading}
                 loadError={loadError}
@@ -129,3 +117,4 @@ const Courses = () => {
 };
 
 export default Courses;
+

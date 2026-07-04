@@ -1,10 +1,9 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { usePoints } from "../../../context/PointsContext";
-import { useState, useEffect } from "react";
-import { api } from "../../../api/client";
+import { useState } from "react";
 
-const CourseItem = ({
+const CourseItem = (({
   course,
   progress = 0,
   onLocked,
@@ -86,20 +85,6 @@ const CourseItem = ({
     } finally {
       setIsPurchasing(false);
     }
-  };
-
-  const handleClick = () => {
-    if (!user) {
-      alert("Silakan login terlebih dahulu untuk mengakses kursus.");
-      navigate("/login");
-      return;
-    }
-    if (!hasAccess) {
-      // Show purchase modal or redirect to purchase
-      handlePurchase();
-      return;
-    }
-    navigate(`/${category === 'js' ? 'javascript' : category}`);
   };
   
   const discountPercentage = originalPrice > price && price > 0 ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
@@ -272,7 +257,7 @@ const CourseItem = ({
       )}
     </div>
   );
-};
+});
 
 // Helper functions to get icon and color based on category
 const getCategoryIcon = (category) => {
@@ -308,3 +293,4 @@ const getCategoryColor = (category) => {
 };
 
 export default CourseItem;
+

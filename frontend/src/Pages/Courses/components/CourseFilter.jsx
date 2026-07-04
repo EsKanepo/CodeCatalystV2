@@ -20,19 +20,6 @@ const CourseFilter = ({ selectedCategory, setSelectedCategory, showAllCourses, s
     "docker": "Docker"
   };
 
-  const categoryRoutes = {
-    "html": "/html",
-    "css": "/css",
-    "js": "/javascript",
-    "bootstrap": "/bootstrap",
-    "react": "/react",
-    "nodejs": "/nodejs",
-    "vue": "/vue",
-    "typescript": "/typescript",
-    "git": "/git",
-    "docker": "/docker"
-  };
-
   const handleCategoryClick = (category) => {
     if (category === "Semua") {
       navigate("/courses");
@@ -91,3 +78,4 @@ const CourseFilter = ({ selectedCategory, setSelectedCategory, showAllCourses, s
 };
 
 export default CourseFilter;
+

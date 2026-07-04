@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { usePoints } from "../../../context/PointsContext";
 import { api } from "../../../api/client";
 
 const PopularCourses = () => {
-  const navigate = useNavigate();
   const { user } = useAuth();
   const { isEnrolledInCourse } = usePoints();
 
@@ -127,3 +126,4 @@ const PopularCourses = () => {
 };
 
 export default PopularCourses;
+
