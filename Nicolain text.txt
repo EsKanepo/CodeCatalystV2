@@ -57,17 +57,27 @@ Template yang digunakan:
 
 Website yang kami kembangkan memiliki beberapa inovasi dan keunggulan, antara lain:
 
-- Sistem CodePoints (Mata Uang Virtual): Fitur unik untuk gamifikasi pembelajaran, di mana pengguna dapat membeli kursus menggunakan poin virtual, mendapatkan bonus harian, 
-  dan menyelesaikan tantangan untuk mendapatkan reward. Ini mendorong engagement dan membuat pembelajaran lebih menarik dibandingkan LMS tradisional.
-- Gamified Learning Experience: Integrasi poin, achievements, dan progress tracking real-time dengan animasi (menggunakan Framer Motion) yang membuat proses belajar lebih 
-  interaktif dan menyenangkan.
-- Responsive Design dengan Mobile-First Approach: UI/UX yang modern dan profesional menggunakan Material-UI, dengan grid layout yang adaptif dan animasi halus, memastikan 
-  pengalaman optimal di semua perangkat (mobile, tablet, desktop).
-- Auto-Setup Scripts: Inovasi teknis dengan script otomatis untuk instalasi dan startup, termasuk mock database yang tidak memerlukan setup MySQL manual, sehingga mengurangi 
-  kompleksitas deployment.
+- Sistem CodePoints (Mata Uang Virtual): Fitur unik untuk gamifikasi pembelajaran, di mana pengguna dapat membeli kursus menggunakan poin virtual, mendapatkan bonus harian, dan menyelesaikan tantangan untuk mendapatkan reward. Ini mendorong engagement dan membuat pembelajaran lebih menarik dibandingkan LMS tradisional.
+- Gamified Learning Experience: Integrasi poin, achievements, dan progress tracking real-time dengan animasi (menggunakan Framer Motion) yang membuat proses belajar lebih interaktif dan menyenangkan.
+- Responsive Design dengan Mobile-First Approach: UI/UX yang modern dan profesional menggunakan Material-UI, dengan grid layout yang adaptif dan animasi halus, memastikan pengalaman optimal di semua perangkat (mobile, tablet, desktop).
+- Auto-Setup Scripts: Inovasi teknis dengan script otomatis untuk instalasi dan startup, termasuk mock database yang tidak memerlukan setup MySQL manual, sehingga mengurangi kompleksitas deployment.
 - Mock Database untuk Development: Pendekatan zero-configuration database yang memungkinkan pengembangan cepat tanpa dependensi eksternal.
-- Integrasi Fitur Modern: Penggunaan context API untuk state management (AuthContext, PointsContext), validasi input yang kuat, dan API endpoints yang terstruktur untuk 
-  manajemen kursus, progress, dan autentikasi.
+- Integrasi Fitur Modern: Penggunaan context API untuk state management (AuthContext, PointsContext), validasi input yang kuat, dan API endpoints yang terstruktur untuk manajemen kursus, progress, dan autentikasi.
+- Admin Dashboard dengan Kontrol Terpusat: Panel admin khusus yang memungkinkan pengelolaan kursus, pengguna, dan transaksi CodePoints secara terpusat, tanpa perlu akses langsung ke database, sehingga mempercepat operasional dan mengurangi risiko human error.
+- Role-Based Access Control (RBAC): Sistem hak akses bertingkat (admin, instruktur, user) menggunakan JWT, sehingga setiap peran hanya bisa mengakses fitur dan data sesuai wewenangnya — meningkatkan keamanan sekaligus kerapian alur kerja aplikasi.
+- Manajemen Konten Dinamis: Admin dapat menambah, mengubah, dan menghapus kursus, kategori, serta materi pembelajaran secara langsung melalui panel admin tanpa perlu deploy ulang aplikasi, mempercepat proses update konten.
+- Kontrol Sistem CodePoints: Admin memiliki kemampuan untuk memantau, menyesuaikan, atau memberikan reward CodePoints kepada pengguna secara manual (misalnya untuk event atau kompensasi), menambah fleksibilitas dalam mengelola gamifikasi.
+- Monitoring & Insight Pengguna: Panel admin menyediakan ringkasan aktivitas pengguna (progress belajar, jumlah kursus diambil, penggunaan poin) yang membantu tim pengembang mengevaluasi efektivitas fitur gamifikasi secara berkelanjutan.
+
+
+5. Link Hostingan:
+
+- Vercel : codecatalystv2.vercel.app
+- Railway : codecatalyst-backend-production.up.railway.app
+
+6. Username dan Password (Admin):
+admin@codecatalyst.com
+password123
 
 
 ==============================================================================================================================================================================
