@@ -31,8 +31,11 @@ const app = express();
 const PORT = process.env.PORT || 3003;
 
 app.use(helmet());
+const allowedOrigins = env.CORS_ORIGIN.split(',').map(o => o.trim());
+console.log('[DEBUG] Allowed CORS origins:', JSON.stringify(allowedOrigins));
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(morgan('combined'));
