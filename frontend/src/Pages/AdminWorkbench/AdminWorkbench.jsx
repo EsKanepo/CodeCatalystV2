@@ -135,12 +135,20 @@ const AdminWorkbench = () => {
           setFaqs(faqs.map(f => f.id === editingFaqId ? res.data.data : f));
           setEditingFaqId(null);
           setFaqForm(EMPTY_FAQ);
+          // Broadcast update ke tab lain
+          const channel = new BroadcastChannel('faq_updates');
+          channel.postMessage({ type: 'faq_updated' });
+          channel.close();
         }
       } else {
         const res = await faqAPI.create(faqForm);
         if (res.data.success) {
           setFaqs([res.data.data, ...faqs]);
           setFaqForm(EMPTY_FAQ);
+          // Broadcast update ke tab lain
+          const channel = new BroadcastChannel('faq_updates');
+          channel.postMessage({ type: 'faq_updated' });
+          channel.close();
         }
       }
     } catch (err) {
@@ -158,6 +166,10 @@ const AdminWorkbench = () => {
     try {
       await faqAPI.delete(id);
       setFaqs(faqs.filter(f => f.id !== id));
+      // Broadcast update ke tab lain
+      const channel = new BroadcastChannel('faq_updates');
+      channel.postMessage({ type: 'faq_updated' });
+      channel.close();
     } catch {
       alert('Gagal menghapus FAQ.');
     }
@@ -172,12 +184,20 @@ const AdminWorkbench = () => {
           setTestimonials(testimonials.map(t => t.id === editingTestimonialId ? res.data.data : t));
           setEditingTestimonialId(null);
           setTestimonialForm(EMPTY_TESTIMONIAL);
+          // Broadcast update ke tab lain
+          const channel = new BroadcastChannel('testimonial_updates');
+          channel.postMessage({ type: 'testimonial_updated' });
+          channel.close();
         }
       } else {
         const res = await testimonialAPI.create(testimonialForm);
         if (res.data.success) {
           setTestimonials([res.data.data, ...testimonials]);
           setTestimonialForm(EMPTY_TESTIMONIAL);
+          // Broadcast update ke tab lain
+          const channel = new BroadcastChannel('testimonial_updates');
+          channel.postMessage({ type: 'testimonial_updated' });
+          channel.close();
         }
       }
     } catch (err) {
@@ -202,6 +222,10 @@ const AdminWorkbench = () => {
     try {
       await testimonialAPI.delete(id);
       setTestimonials(testimonials.filter(t => t.id !== id));
+      // Broadcast update ke tab lain
+      const channel = new BroadcastChannel('testimonial_updates');
+      channel.postMessage({ type: 'testimonial_updated' });
+      channel.close();
     } catch {
       alert('Gagal menghapus testimonial.');
     }
